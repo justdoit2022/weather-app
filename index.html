@@ -13,90 +13,84 @@
     />
     <title>weather app</title>
     <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
+    
     <div class="container">
+      <p>
+<a  class="github-link" href="https://github.com/justdoit2022/weather-app">
+       Open-source 
+     </a> 
+code by Letitia 
+      </p>
+      
       <div class="card">
         <div class="card-body">
           <div class="row-4">
-            <div class="col"></div>
-           
-            <div class="col-7">
-              <form>
-                <input
-                  class="form-control"
-                  list="datalistOptions"
-                  id="exampleDataList"
-                  placeholder="Type to search..."
-                />
-                <datalist id="datalistOptions">
-                  <option value="Paris"> </option>
-                  <option value="Tokyo"> </option>
-                  <option value="Lisbon"> </option>
-                  <option value="San Francisco"> </option>
-                  <option value="Moscow"> </option>
-                  <option value="London"> </option>
-                  <option value="Melbourne"> </option>
-                </datalist>
-              </form>
-            </div>
-            <div class="row">
-                <div class="col">
-              <br />
-              <h6>London 🇬🇧</h6>
-              <form>
-                <input type="datetime-local" />
-              </form>
-            </div>
-            <div class="row">
-                <div class="col">
-              <img src="images/sun2.png" class="mainsun"/>
-              <span> 35°C </span>
-            </div>
-            <div class="row">
             <div class="col">
-              THURS 
-              <br />
-              <img src="images/cloud.png"/>
-              <br />
-              19°C
-          </div>
-          <div class="col">
-            FRI
-            <br />
-            <img src="images/rain.png"/>
-            <br />
-            12°C
-          </div>
-          <div class="col">
-            SAT
-            <br />
-            <img src="images/cloud.png"/>
-            <br />
-            10°C
-          </div>
-          <div class="col">
-            SUN
-            <br />
-            <img src="images/sun2.png"/>
-            <br />
-            20°C
-          </div>
-          <div class="col">
-            MON
-            <br />
-            <img src="images/rain.png"/>
-            <br />
-            14°C
-          </div>
-        </div>
-      </div>
+            </div>
+
+           
+  <div class="row align-items-start">
+    <div class="col-7">
+    <form id="search-form">  
+                <input
+                type="search"
+                autofocus="on"
+                autocomplete="off"
+                  class="form-control shadow-sm"
+                  list="datalistOptions"
+                  id="city-input"
+                  placeholder="Type a city..." />                
+              </form>
+    </div>
+    <div class="col-2">
+     <button type="button" class="btn btn-primary w-100">Search</button>
     </div> 
+      <div class="col-2">
+    <button class="btn btn-success w-100" id="current-location-button">
+          Current
+    </button>
+        </div>
+            </div>
+           
+            <div class="row-london">
+                <div class="col">
+              <br />
+              <h5 id="city">  </h5>
+              <h6 id="date"> </h6>
+            
+            </div>
+            <div class="row">
+                <div class="col-sun">
+              <img src="images/sun2.png" class="mainsun"/>  </div>
+               <div class="col-number">
+                 
+              <span class="temperature" id="temperature"></span>
+            <span class="units">
+              <a href="#" id="celsius-link" class="underline-link">°C</a> | 
+              <a href="#" id="fahrenheit-link" class="underline-link">°F</a>
+                
+                 </span> 
+             </span>
+             </div>
+            <div class="card-wind" style="width: 18rem;">
+  <div class="card-body">
+    <ul>
+
+    <li>HUMIDITY:<span id="humidity" ></span><strong>%</strong></li>
+ <li>WIND:<span id="wind" ></span><stron>km/h</strong></li> 
+</ul>
+  </div>
+</div>
+            </div>
+            <div class="row-font">
+ <div class="col-align-self-end" id="weather-description">
+   </div>
     <script src="src/index.js">
     </script> 
-    <div>
-          <p> Open-sourced code by Letitia </p>
-    </div>
-
+    
   </body> 
+  
 </html>
