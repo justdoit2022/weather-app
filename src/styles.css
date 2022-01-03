@@ -32,10 +32,17 @@ h6 {
   margin: 5px 0 -10px;
 }
 
-ul {
+li {
   font-size: 15px;
   font-family: "Courier New", Courier, monospace;
   list-style-type: none;
+}
+
+.colour-hum-wind {
+  font-size: 40px;
+  font-family: "Courier New", Courier, monospace;
+  list-style-type: none;
+  color: #ff3366;
 }
 
 input {
@@ -101,6 +108,7 @@ span {
 
 .col-align-self-end {
   font-style: italic;
+  text-transform: capitalize;
 }
 
 .form-control {
