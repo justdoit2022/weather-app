@@ -8,7 +8,7 @@ function formatDate(timestamp) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  let day = days[date.getDay()];
+
   let days = [
     "Sunday",
     "Monday",
@@ -18,6 +18,7 @@ function formatDate(timestamp) {
     "Friday",
     "Saturday",
   ];
+  let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
 }
 
@@ -29,8 +30,6 @@ function displayWeatherCondition(response) {
   let windElement = document.querySelector("#wind");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
-  let celsiusElement = document.querySelector("#celsius-link");
-  let fahrenheitElement = document.querySelector("#fahrenheit-link");
 
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   cityElement.innerHTML = response.data.name;
@@ -54,10 +53,24 @@ function search(city) {
 function handleSubmit(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
-  defaultSearchCity(city.value);
+  search(cityInputElement.value);
 }
 
-defaultSearchCity("London");
+search("London");
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
+
+function searchLocation(position) {
+  let apiKey = "011461cbafe4e584665225d59393a479";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeatherCondition);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
+
+let currentLocationButton = document.querySelector("#current-location-button");
+currentLocationButton.addEventListener("click", getCurrentLocation);
