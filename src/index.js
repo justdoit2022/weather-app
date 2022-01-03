@@ -1,28 +1,28 @@
-let now = new Date();
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let day = days[date.getDay()];
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return `${day} ${hours}:${minutes}`;
+}
 
 let dateElement = document.querySelector("#date");
-
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
-
-let hours = now.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
-}
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-
-dateElement.innerHTML = `${day} ${hours}:${minutes}`;
+dateElement.innerHTML = formatDate(response.data.dt * 1000);
 
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
