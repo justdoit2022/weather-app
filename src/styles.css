@@ -86,7 +86,6 @@ span {
   margin: 5px 0 -10px;
   word-spacing: -5px;
   color: black;
-  text-decoration: none;
   padding: 0px;
 }
 
@@ -152,4 +151,8 @@ form {
 .units .active:hover {
   text-decoration: none;
   color: black;
+}
+
+.units a {
+  text-decoration: none;
 }
