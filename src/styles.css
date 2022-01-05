@@ -132,10 +132,6 @@ form {
   padding: 0px;
 }
 
-.underline-link {
-  text-decoration: none;
-}
-
 .btn-primary,
 .btn-success {
   width: 80px;
@@ -145,4 +141,15 @@ form {
 
 .btn-success {
   margin-left: 12px;
+}
+
+.units .active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+
+.units .active:hover {
+  text-decoration: none;
+  color: black;
 }
