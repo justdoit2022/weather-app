@@ -158,10 +158,12 @@ form {
 }
 
 .weather-forecast {
-  margin-top: 20px;
+  padding-top: 20px;
+  padding-right: 20px;
   text-align: center;
-  width: 150px;
+  width: 590px;
   color: #000;
+  margin: 0px;
 }
 
 .weather-forecast-date {
